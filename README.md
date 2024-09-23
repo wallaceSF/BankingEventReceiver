@@ -14,7 +14,7 @@ The message receiver is using Azure Service Bus using the Peek Lock method for m
 
 Write a production quality event receiver, that receives Credit/Debit notifications and updates the total balance in the BankAccounts table.
 You can add new tables to the database if you need to.
-The important part is production quality, from Quality levels, resiliency and data integrity.
+The important part is **production quality**, from Quality levels, resiliency and data integrity.
 
 # Requirements:
 - If IEventReceiver.Peek returns null, it means there are no messages in the queue, so await 10 seconds
