@@ -16,6 +16,8 @@ Write a production quality event receiver, that receives Credit/Debit notificati
 You can add new tables to the database if you need to.
 The important part is **production quality**, from Quality levels, resiliency and data integrity.
 
+The MessageProcessor runs into multiple containers at the same time.
+
 # Requirements:
 - If IEventReceiver.Peek returns null, it means there are no messages in the queue, so await 10 seconds
 - Messages abandoned more than 3 times automatically go to the Deadletter (You don't need to code this)
@@ -32,7 +34,7 @@ Credit Example
   "id": "89479d8a-549b-41ea-9ccc-25a4106070a1",
   "messageType": "Credit",
   "bankAccountId": "7d445724-24ec-4d52-aa7a-ff2bac9f191d",
-  "amount": "90.00"
+  "amount": 90.00
 }
 ```
 
@@ -42,6 +44,6 @@ Debit Example:
   "id": "89479d8a-549b-41ea-9ccc-25a4106070a1",
   "messageType": "Debit",
   "bankAccountId": "3bbaf4ca-5bfa-4922-a395-d755beac475f"
-  "amount": "90.00"
+  "amount": 90.00
 }
 ```
