@@ -16,8 +16,8 @@ public class MessageWorker : BackgroundService
 
     private static readonly TimeSpan[] Backoffs = new[]
     {
-        //TimeSpan.FromSeconds(5), TimeSpan.FromSeconds(25), TimeSpan.FromSeconds(125)
-        TimeSpan.FromSeconds(2), TimeSpan.FromSeconds(4), TimeSpan.FromSeconds(5)
+        TimeSpan.FromSeconds(5), TimeSpan.FromSeconds(25), TimeSpan.FromSeconds(125)
+        //TimeSpan.FromSeconds(2), TimeSpan.FromSeconds(4), TimeSpan.FromSeconds(5)
     };
 
     private readonly AsyncRetryPolicy _retry = Policy
